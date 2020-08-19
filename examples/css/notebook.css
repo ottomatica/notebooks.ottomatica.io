@@ -1,0 +1,175 @@
+/* https://fransdejonge.com/wp-content/uploads/2010/01/sidenotes.html */
+.sideAnnotation {
+    float: none;
+    width: 100px;
+    margin-left: -120px;
+    margin-top: 0;
+    padding: 3px;
+    text-align: right;
+    position: absolute;
+    user-select: none;
+    color: blue;
+    opacity: 0.25;
+}
+
+#docable-error {
+    padding:10px;
+    margin:10px 0;
+    text-align:center;
+    line-height:1.5em;
+
+    color: #D8000C;
+    background-color: #FFD2D2;
+}
+
+#docable-error:empty{
+    display: none;
+}
+
+.markdown-body .docable-cell pre {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    /* border: 1px solid lightgray; */
+    font-size: 14px;
+}
+
+.docable-cell-command pre {
+    border-left: 5px solid cornflowerblue;
+}
+
+[data-type="command"]::before {
+    content: '$ ';
+    color: grey;
+}
+
+.docable-cell-file-header {
+    /*background-color: #e5e5e5;*/
+    background-color: coral;
+    border-radius: 3px 3px 0 0;
+    color: #323232;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px 15px;
+    /* position: relative; */
+    text-align: center;
+    z-index: 2;
+}
+
+/* .docable-cell-file pre {
+    border-left: 5px solid coral;
+} */
+
+.docable-cell-edit pre {
+    border-left: 5px solid coral;
+}
+
+.markdown-body .docable-cell .failing pre {
+    border-left: 5px solid red;
+}
+
+
+.docable-cell-overlay {
+    /* position: relative; */
+    display: block;
+}
+
+/* Overlay dark effect */
+.docable-cell-overlay:hover {
+    /* -webkit-filter: brightness(90%);
+    filter: brightness(90%);
+    transition: all 600ms; */
+}
+
+/* base overlay button */
+.docable-overlay-btn {
+    position: absolute;
+    top: 10px;
+    font-size: 1.75rem;
+    color: lightgray
+}
+
+.docable-overlay-btn-reveal {
+    position: absolute;
+    top: 10px;
+    /* button is not visible by default */
+    display: none;
+    /* make button style invsible */
+    border: none;
+    background-color: transparent;
+    /* svg property is grey */
+    fill: lightgray;
+}
+
+.docable-cell-overlay:hover .docable-overlay-btn-reveal
+{
+    /* display: block; */
+}
+
+.docable-overlay-btn-reveal:hover {
+    /* fill: #28a745;
+    opacity: 1;
+    transition: all .2s;     */
+}
+
+.docable-overlay-btn:hover {
+    color: #28a745;
+    opacity: 1;
+    transition: all .2s;
+}
+
+.btn-more {
+    right:10px; 
+    width: 32px;
+    height: 32px;    
+}
+
+.play-btn {
+    right: 40px;
+}
+
+.docable-cell-output {
+    background-color: #343a40;
+    padding: 10px;
+    color: whitesmoke;
+    font-family: Consolas, Menlo, "Liberation Mono", Monaco, "Lucida Console";
+
+    font-size: 12px;
+    line-height: 1.1;
+
+    /* allow newlines/etc. */
+    white-space: pre;
+}
+
+/* pseudo selector for ensuring not displayed when empty.*/
+.docable-cell-output:empty
+{
+    display:none;
+}
+
+.docable-cell-output .docable-error {
+  background-color: red;   
+  padding: 1.5px;
+}
+
+.docable-cell-output .docable-success {
+  background-color: green;    
+  padding: 1.5px;
+}
+
+* {
+    z-index: 100
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.35); /* Black background with opacity */
+    z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
+  }
